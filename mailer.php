@@ -1,18 +1,18 @@
 <?php
 
     // Grab values from from on previous page
-    $fromName        =  $_POST["fromName"];
-    $fromEmail       =  $_POST["fromEmail"];
-    $toEmail         =  $_POST["toEmail"];
-    $subjectLine     =  $_POST["subjectLine"];
+    $fromName        =  trim($_POST["fromName"]);
+    $fromEmail       =  trim($_POST["fromEmail"]);
+    $toEmail         =  trim($_POST["toEmail"]);
+    $subjectLine     =  trim($_POST["subjectLine"]);
     $richMessageText =  $_POST["richMessageText"];
     $rawMessageText  =  $_POST["rawMessageText"];
 
-    // If value exists for ritch text but not raw
+    // If value exists for ritch text but not raw sore rich message text as $message
     if($richMessageText && !$rawMessageText) {
         $message = $richMessageText;
     }
-    // If value exists for raw text but not ritch
+    // If value exists for raw text but not ritch store raw message text as $message
     elseif (!$richMessageText && $rawMessageText) {
         $message = $rawMessageText;
     }
@@ -42,7 +42,7 @@
         echo "
         <div class=\"col-md-6 offset-md-3\">
             <div class=\"alert alert-success\" role=\"alert\">
-                <strong>Email Sent!</strong> Your spoofed email has been sent using the values seen below. Keep in mind that if you used the rich text editor, the message may appear slightly different in the actual email. Thanks for using Zaqar_Mailer!
+                <strong>Email Sent!</strong> Your spoofed email has been sent using the values seen below. Keep in mind that if you used the rich text editor, the message may appear slightly different in the actual email. Thanks for using Zaqar!
             </div>
         </div>
         ";
