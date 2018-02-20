@@ -27,3 +27,7 @@ Using this application for any other reason falls outside of its intended use an
 1. We could totally use a cool logo for Zaqar. The app is sleek and simple, so something modern with a flat design would be cool. I am going to open that one up to the community for that one.
 2. I have played around with JS frameworks like taggle.js and Tagger.js to make a 'pool' of "to emails" but it didn't really work super well. Other ways to show a visual pool of emails would be  great but I am burnt out of trying it. Anyone else want to take a shot?
 3. The ability to choose Cc and Bcc might also be nice--it would be simple, just not sure how to adjust the UI to allow for it
+4. The ability to add other header types, but even to add your own custom header? I don't want to provide useless features, but if it's requested we could add them
+5. The ability to add an attachment for a phishing payload would be nice
+6. Is there a way to make it so spoofed emails don't show this "via" in gmail or other clients? Would that be a particular header? 
+<img src="https://i.imgur.com/Q4JOS76.png">
