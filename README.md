@@ -7,7 +7,7 @@ Zaqar is easy to use! However, the only catch is that you must have access to a 
 ## What makes Zaqar different?
 Search for “PHP Mail Spoofer” and you will get dozens of GitHub pages that host a simple PHP script and poorly designed HTML form. Frankly speaking, these applications look ugly and their options are limited. Few offer the ability to craft the spoofed message using a rich text editor—which is a critical feature in order to build believable messages. Zaqar was built to be the tool that you keep coming back to: both for its sleek and modern UI, and simple but powerful spoofing features.  Using Bootstrap as the front-end framework, and Simditor as the rich text editor, Zaqar was built to be easy to use allow you to build believable messages to multiple people at the same time. This will be the only mail spoofer you will ever need. 
 
-## What's Zaqar Mean?
+## What Does Zaqar Mean?
 In Mesopotamian mythology, Zaqar is the messenger of the god Sin. He relays these messages to mortals through his power over their dreams and nightmares. Seemed fitting and less dull than "Email Spoofer". 
 
 ## Disclaimer and Terms of Usage
