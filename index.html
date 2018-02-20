@@ -1,0 +1,192 @@
+<!--
+    ######################################################
+      ____                     __  __      _ _
+     |_  /__ _ __ _ __ _ _ _  |  \/  |__ _(_) |___ _ _
+      / // _` / _` / _` | '_| | |\/| / _` | | / -_) '_|
+     /___\__,_\__, \__,_|_|   |_|  |_\__,_|_|_\___|_|
+                 |_|
+
+    Created by: Tobin Shields
+    Github: #############
+    Resources Used:
+                    Bootstrap 4
+                    https://getbootstrap.com/
+
+                    Simditor
+                    http://simditor.tower.im/
+
+    ######################################################
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- HTML5 Ritch Text Simditor CSS -->
+    <link rel="stylesheet" type="text/css" href="simditor/css/simditor.css" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <title>Zaqar_Mailer | Spoof all the emails!</title>
+
+    <style>
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        #email-icon {
+            display: block;
+            margin: auto;
+        }
+        blockquote {
+            color: grey;
+            font-style: italic;
+            text-align: center;
+            border-bottom: solid 1px lightgrey;
+            padding-bottom: 20px;
+        }
+    </style>
+  </head>
+
+  <body style="background-image: url('bg.png');">
+    <div class="col-md-6 offset-md-3">
+
+        <!-- Zaqar Icon -->
+        <!-- This is a generic icon, in future updates a custom icon would be awesome -->
+       <img src="zaqar-icon.png" alt="Zaqar Icon" class="img-fluid mt-4 mb-4" id="email-icon">
+
+       <!-- Open Card -->
+       <div class="card card-outline-secondary">
+           <!-- Card header -->
+           <div class="card-header text-center">
+               <h1 class="mb-0">Zaqar_Mailer</h1>
+               <h4><span class="lead">Spoof all the emails!</span></h4>
+           </div>
+
+           <!-- Card Body -->
+           <div class="card-body">
+               <!-- Zaqar Quote -->
+               <blockquote cite="https://en.wikipedia.org/wiki/Zaqar">
+                  <p class="mb-0">In Mesopotamian mythology, Zaqar or Dzakar is the messenger of the god Sin. He relays these messages to mortals through his power over their dreams and nightmares.</p>
+                </blockquote>
+
+                <!-- Application Description -->
+                <p>Zaqar_Mailer is designed to aid penetration testers in creating spoofed emails to conduct social engineering attacks. This tool allows users to send an email looking as if it came from any email address and/or name with options of using a rich text editor or raw text. This is not designed to generate spam emails or to commit fraud. If you do that you are a jerk.</p>
+
+               <!-- Start Form -->
+                <form class="form" role="form" autocomplete="off" action="mailer.php" method="post">
+                   <fieldset>
+
+                       <!-- FROM NAME -->
+                       <label for="fromName">From Name</label>
+                       <div class="row mb-1">
+                           <div class="col-lg-12">
+                                 <input type="text" name="fromName" class="form-control" data-toggle="tooltip" data-placement="left" title="This is the name that will appear in the FROM field of the spoofed email">
+                           </div>
+                       </div>
+
+                        <!-- FROM EMAIL -->
+                       <label for="fromMail">From Email Address</label>
+                       <div class="row mb-1">
+                           <div class="col-lg-12">
+                                   <input type="text" name="fromEmail"  class="form-control" data-toggle="tooltip" data-placement="left" title="The spoofed email will look as if it appeared from this email addrress">
+                           </div>
+                       </div>
+
+                      <!-- TO EMAIL  -->
+                      <label for="toMail">To Email Address</label>
+                      <div class="row mb-1">
+                          <div class="col-lg-12">
+                                  <input type="text" name="toEmail"  class="form-control" data-toggle="tooltip" data-placement="left" title="This is the email address that you want to send the spoofed email to">
+                          </div>
+                      </div>
+
+                      <!-- SUBJECT LINE  -->
+                      <label for="subjectLine">Subject Line</label>
+                      <div class="row mb-1">
+                          <div class="col-lg-12">
+                                  <input type="text" name="subjectLine"      class="form-control" data-toggle="tooltip" data-placement="left" title="Whatever you type here will appear in the subject line of the spoofed email">
+                          </div>
+                      </div>
+
+
+                    <!-- About Message Body     -->
+                    <label>Message Body</label>
+                    <p>When crafting your email you have two options: you can either build it using the rich text editor (which will convert the message to HTML) or you can send the message as raw text. While rich text allows more flexibility in how a message can be presented, not all mail clients render HTML correctly or at all. You need to research your target in order to know if the rich text editor is appropriate--when in doubt, use the raw editor.</p>
+
+                    <!-- Message Body Input -->
+                    <div class="row mb-1">
+                       <div class="col-lg-12">
+
+                           <!-- BS Tabs navigation -->
+                           <ul class="nav nav-tabs" role="tablist">
+                             <li class="nav-item">
+                               <a class="nav-link active" data-toggle="tab" href="#rich-text" role="tab">Rich Text</a>
+                             </li>
+                             <li class="nav-item">
+                               <a class="nav-link" data-toggle="tab" href="#raw-text" role="tab">Raw Text</a>
+                             </li>
+                           </ul>
+
+                            <!-- BS Tab Content -->
+                           <div class="tab-content">
+
+                             <!-- Rich Text Tab -->
+                            <div class="tab-pane active" id="rich-text" role="tabpanel">
+                                <!-- This using the simditor rich text editor. You call this using the id="editor" with a textarea tag and some JS down below-->
+                                <textarea id="editor" name="richMessageText" rows="6" cols="40" class="form-control"></textarea>
+                            </div>
+
+                            <!-- Raw Text Content -->
+                            <div class="tab-pane" id="raw-text" role="tabpanel">
+                                <textarea name="rawMessageText" rows="12" cols="40" class="form-control"></textarea>
+                            </div>
+                           </div>
+                       </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg mt-3" style="display: block; margin:auto;">Send Spoofed Email</button>
+                   </fieldset>
+                </form>
+           </div>
+       </div>
+       <!-- /form user info -->
+
+
+
+   </div>
+   <!--/col-->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- Ritch Text Editor Simditor JS -->
+    <script src="simditor/js/module.js"></script>
+    <script src="simditor/js/hotkeys.js"></script>
+    <script src="simditor/js/uploader.js"></script>
+    <script src="simditor/js/simditor.js"></script>
+
+    <script>
+    var editor = new Simditor({
+        textarea: $('#editor')
+        //optional options added here
+        });
+
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })
+
+    </script>
+  </body>
+</html>
