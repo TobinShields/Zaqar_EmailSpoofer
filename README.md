@@ -2,7 +2,9 @@
 A powerful PHP email spoofer with a polished UI and rich text editor. 
 
 ## How to use
-Zaqar is easy to use! However, the only catch is that you must have access to a web server configured for SMTP for it to work--this will not work if you just download the files and attemt to run them locally. The easy way to get access to a legal STMP configured sever is to pay for a webhosting service (through sites like GoDaddy.com or BlueHost.com). Then you will need to download the Zaqar files and place them on your webserver via FTP. Free hosting sites like 000WebHost.com really don't work as almost any email coming from those mail servers are marked as spam. If you want decent results, you are going to have to pay some money. 
+Zaqar is easy to use! However, the only catch is that you must have access to a web server configured for SMTP for it to work—the spoofer will not actually do anything if you just download the files and attempt to run them locally. The easy way to get access to a legal STMP configured sever is to pay for a webhosting service (through sites like GoDaddy.com or BlueHost.com). Then you will need to download the Zaqar files and place them on your webserver via FTP. Free hosting sites like 000WebHost.com really don't work as almost any email coming from those mail servers are marked as spam. If you want decent results, you are going to have to pay some money.  
+
+If you need help going though the process of setting up a hosting service and uploading files via FTP, this may not be the tool for you. 
 
 ## What makes Zaqar different?
 Search for “PHP Mail Spoofer” and you will get dozens of GitHub pages that host a simple PHP script and poorly designed HTML form. Frankly speaking, these applications look ugly and their options are limited. Few offer the ability to craft the spoofed message using a rich text editor—which is a critical feature in order to build believable messages. Zaqar was built to be the tool that you keep coming back to: both for its sleek and modern UI, and simple but powerful spoofing features.  Using Bootstrap as the front-end framework, and Simditor as the rich text editor, Zaqar was built to be easy to use allow you to build believable messages to multiple people at the same time. This will be the only mail spoofer you will ever need. 
@@ -15,7 +17,7 @@ By using this application you are agreeing to only send a spoofed email if eithe
 
 1) You are conducting a formal and legal penetration test in which you have the explicit permission of the organization that represents the target, and such a targeted attack is outlined in your planned attack scope.
 
-2) You are a student or learning about mail systems and want to learn more about mail security. If this is the case, you should only be spoofing accounts that you have legal access to, or have otherwise gotten permission to use. Spoofed emails sent for the sake of           learning should not attempt to steal credentials or other sensitive information, even as a ‘joke’ or ‘prank.’
+2) You are a student or learning about mail systems and want to learn more about mail security. If this is the case, you should only be spoofing accounts that you have legal access to, or have otherwise gotten permission to use. Spoofed emails sent for the sake of learning should not attempt to steal credentials or other sensitive information, even as a ‘joke’ or ‘prank.’
 
 Using this application for any other reason falls outside of its intended use and is not endorsed, encouraged, or approved by the application’s creator or its contributors. This is especially true if this application is being used to send spam messages or commit fraud. This mailer does little to protect the identity of where it was truly sent and the message can be easily tracked back to the originator.  It only masks the identity on a surface level inside of a mail client.
 
