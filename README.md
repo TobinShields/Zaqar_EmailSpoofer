@@ -1,6 +1,10 @@
 # Zaqar: The Email Spoofer
 A powerful PHP email spoofer with a polished UI and rich text editor. 
 
+<img src="https://github.com/TobinShields/Zaqar_Mailer/blob/master/img/zaqar_screenshot_1.PNG?raw=true" width="45%" style="float:left;">
+<img src="https://github.com/TobinShields/Zaqar_Mailer/blob/master/img/zaqar_screenshot_2.PNG?raw=true" width="45%" style="float:left;">
+<img src="https://github.com/TobinShields/Zaqar_Mailer/blob/master/img/zaqar_screenshot_3.PNG?raw=true" width="45%" style="float:left;">
+
 ## How to use
 Zaqar is easy to use! However, the only catch is that you must have access to a web server configured for SMTP for it to work—the spoofer will not actually do anything if you just download the files and attempt to run them locally. The easy way to get access to a legal STMP configured sever is to pay for a webhosting service (through sites like GoDaddy.com or BlueHost.com). Then you will need to download the Zaqar files and place them on your webserver via FTP. Free hosting sites like 000WebHost.com really don't work as almost any email coming from those mail servers are marked as spam. If you want decent results, you are going to have to pay some money.  
 
