@@ -1,0 +1,30 @@
+/* Gitub support sticky */
+.github-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 20px;
+    color: white;
+}
+/* All form labels */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+/* Main Icon on app page */
+#email-icon {
+    display: block;
+    margin: auto;
+}
+/* Zaqar Quote */
+blockquote {
+    color: grey;
+    font-style: italic;
+    text-align: center;
+    border-bottom: solid 1px lightgrey;
+    padding-bottom: 20px;
+}
+/* Email Review page */
+table td:first-child{
+    font-weight: bold;
+    width: 25%;
+}

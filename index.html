@@ -7,7 +7,7 @@
      /____\__,_|\__, |\__,_|_|      |_____|_| |_| |_|\__,_|_|_|   |____/| .__/ \___/ \___/|_|  \___|_|
                    |_|                                                  |_|
 
-   Zaqar: The Email Spoofer v1.1
+   Zaqar: The Email Spoofer v1.2
    Created by: Tobin Shields
    Other contributors: [None as of now]
    Github: https://github.com/TobinShields/Zaqar_EmailSpoofer
@@ -42,42 +42,31 @@
         <link rel="stylesheet" type="text/css" href="simditor/css/simditor.css" />
 
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+        <!-- If you want to use the CDN insted of the local file, simply uncomment the line below and remove the local link -->
+            <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.min.css">
+        <!-- App styles -->
+        <link rel="stylesheet" href="zaqar.css">
         <!-- Favicon -->
         <link rel="icon" href="favicon.ico">
 
-        <!-- Custom Page Styles -->
-        <style>
-            label {
-                font-weight: bold;
-                margin-top: 10px;
-            }
-
-            #email-icon {
-                display: block;
-                margin: auto;
-            }
-            blockquote {
-                color: grey;
-                font-style: italic;
-                text-align: center;
-                border-bottom: solid 1px lightgrey;
-                padding-bottom: 20px;
-            }
-        </style>
 
     </head>
 
     <!-- Background image set here -->
-    <body style="background-image: url('bg.png');">
+    <body style="background-image: url('img/bg.png');">
+
+    <!-- Github sticky -->
+    <div class="github-sticky">
+        <p>Zaqar v1.2 - Support this project on <a href="https://github.com/TobinShields/Zaqar_EmailSpoofer">Github</a></p>
+    </div>
 
     <!-- Main container. It is thinner so it's using a col-6 with an offset -->
     <div class="col-md-6 offset-md-3">
 
         <!-- Zaqar Icon -->
         <!-- This is a generic icon, in future updates a custom icon would be awesome -->
-        <img src="zaqar-icon.png" alt="Zaqar Icon" class="img-fluid mt-4 mb-4" id="email-icon">
+        <img src="img/zaqar-icon.png" alt="Zaqar Icon" class="img-fluid mt-4 mb-4" id="email-icon">
         <!-- Start Form -->
         <form class="form" role="form" autocomplete="off" action="mailer.php" method="post">
            <fieldset>
@@ -103,7 +92,7 @@
                        <label for="fromName">From Name</label>
                        <div class="row mb-1">
                            <div class="col-lg-12">
-                                 <input type="text" name="fromName" class="form-control" data-toggle="tooltip" data-placement="left" title="This is the name that will appear in the FROM field of the spoofed email">
+                                 <input type="text" name="fromName" class="form-control" data-toggle="tooltip" data-placement="left" title="This is the name that will appear in the FROM field of the spoofed email" required>
                            </div>
                        </div>
 
@@ -111,16 +100,33 @@
                        <label for="fromMail">From Email Address</label>
                        <div class="row mb-1">
                            <div class="col-lg-12">
-                                   <input type="text" name="fromEmail"  class="form-control" data-toggle="tooltip" data-placement="left" title="The spoofed email will look as if it appeared from this email addrress">
+                                   <input type="email" name="fromEmail"  class="form-control" data-toggle="tooltip" data-placement="left" title="The spoofed email will look as if it appeared from this email addrress" required>
                            </div>
                        </div>
 
                       <!-- TO EMAIL  -->
-                      <label for="toMail">To Email Address</label>
+                      <label for="toMail">To Email Address(s)</label>
                       <div class="row mb-1">
                           <div class="col-lg-12">
-                                <input type="text" name="toEmail"  class="form-control" data-toggle="tooltip" data-placement="left" title="This is the email address that you want to send the spoofed email to">
+                                <input type="email" name="toEmail"  class="form-control" data-toggle="tooltip" data-placement="left" title="This is the email address that you want to send the spoofed email to" required>
                                 <p><strong>Pro Tip: </strong> You can send to multiple addresses at once if you seperate each address with a comma</p>
+
+                            <!-- More Options -->
+                                 <button type="button" class="btn-sm btn-primary mb-3" data-toggle="collapse" data-target="#more-options" id="more-options-btn"><span id="show-more">Show</span> More Sending Options</button>
+                                 <div class="collapse alert alert-secondary" id="more-options">
+                                     <p class="m-0"><strong>Note: </strong> You still want to add at least one "to" address, as many anti-spam filters will discard messages with no "to" field in the header. It does not have to be a real address.</p>
+                                     <div class="row">
+                                         <div class="col">
+                                             <label for="cc">Cc: Email Address(s)</label>
+                                             <input type="text" name="cc" class="form-control">
+                                         </div>
+                                         <div class="col">
+                                             <label for="bcc">Bcc: Email Address(s)</label>
+                                             <input type="text" name="bcc" class="form-control">
+                                         </div>
+                                     </div>
+                                 </div>
+
                           </div>
                       </div>
 
@@ -128,7 +134,7 @@
                       <label for="subjectLine">Subject Line</label>
                       <div class="row mb-1">
                           <div class="col-lg-12">
-                                  <input type="text" name="subjectLine"      class="form-control" data-toggle="tooltip" data-placement="left" title="Whatever you type here will appear in the subject line of the spoofed email">
+                                  <input type="text" name="subjectLine"      class="form-control" data-toggle="tooltip" data-placement="left" title="Whatever you type here will appear in the subject line of the spoofed email" maxlength="50" required>
                           </div>
                       </div>
 
@@ -222,10 +228,16 @@
 
 
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- If you want to use th CDN and not the local jquery file to save space then uncomment the CDN script tags and remove the local script tags. -->
+
+    <!-- JQUERY -->
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+        <script src="bootstrap-4.0.0/js/jquery-3.2.1.slim.min.js"></script>
+
+    <!-- BOOTSTRAP -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+        <script src="bootstrap-4.0.0/js/bootstrap.bundle.min.js"></script>
 
     <!-- Ritch Text Editor Simditor JS -->
     <script src="simditor/js/module.js"></script>
@@ -233,18 +245,33 @@
     <script src="simditor/js/uploader.js"></script>
     <script src="simditor/js/simditor.js"></script>
 
+    <!-- Custom Scripts -->
     <script>
-    // Initalize simditor. It is looking for the ID of the textara as listed above
+    // Required snippit to initalize simditor. It is looking for the ID of the textara as listed above
     var editor = new Simditor({
         textarea: $('#editor')
         //optional options added here
         });
 
-    // Initalize the tooltips in Bootstrap
+    // Required snippit to initalize the tooltips in Bootstrap
     $(function () {
       $('[data-toggle="tooltip"]').tooltip()
     })
 
+    // Toggle show more btn text
+    // Not sure if this is the ideal way to do this, but it works
+    var showMoreOptions = false; // Start with false, because it is hidden by default
+    $('#more-options-btn').click(function(){ // On click check if var is true or false
+        if(!showMoreOptions) {
+            // When it expands content switch to hide
+            $('#show-more').replaceWith("<span id='show-less'>Hide</span>");
+            showMoreOptions = true;
+        } else {
+            // She collapsed switch to show
+            $('#show-less').replaceWith("<span id='show-more'>Show</span>");
+            showMoreOptions = false;
+        }
+    });
     </script>
   </body>
 </html>

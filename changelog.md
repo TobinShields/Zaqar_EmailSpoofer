@@ -1,15 +1,7 @@
-######################################################
-      _____                          _____                 _ _     ____                     __
-     |__  /__ _  __ _  __ _ _ __    | ____|_ __ ___   __ _(_) |   / ___| _ __   ___   ___  / _| ___ _ __
-       / // _` |/ _` |/ _` | '__|   |  _| | '_ ` _ \ / _` | | |   \___ \| '_ \ / _ \ / _ \| |_ / _ \ '__|
-      / /| (_| | (_| | (_| | |      | |___| | | | | | (_| | | |    ___) | |_) | (_) | (_) |  _|  __/ |
-     /____\__,_|\__, |\__,_|_|      |_____|_| |_| |_|\__,_|_|_|   |____/| .__/ \___/ \___/|_|  \___|_|
-                   |_|                                                  |_|
-                                                                                            CHANGELOG
-
-    Zaqar: The Email Spoofer v1.1
+#CHANGELOG
+    Zaqar: The Email Spoofer v1.2
     Created by: Tobin Shields
-    Other contributors: [None as of now]
+    Other contributors: [None as of now - You could change that!]
     Github: https://github.com/TobinShields/Zaqar_EmailSpoofer
     Resources Used:
                     Bootstrap 4
@@ -24,8 +16,6 @@
                     (Background image)
                     https://www.toptal.com/designers/subtlepatterns/
 
-######################################################
-
 #Types of changes
     [Added] for new features.
     [Changed] for changes in existing functionality.
@@ -35,9 +25,11 @@
     [Security] in case of vulnerabilities.
 
 #[Unreleased] - Upcoming Changes, Current Projects, and 'wish list' items
--We could totally use a cool logo for Zaqar. The app is sleep and simple, so something modern with a flat design would be cool. I am going to open that one up to the community for that one.
--I have played around with JS frameworks like taggle.js and Tagger.js to make a 'pool' of "to emails" but it didn't really work super well. Other ways to show a visual pool of emails would be cool
--The ability to choose Cc and Bcc might also be cool--it would be simple, just not sure how to adjust the UI
+* We could totally use a cool logo for Zaqar. The app is sleek and simple, so something modern with a flat design would be cool. I am going to open that one up to the community for that one.
+* I have played around with JS frameworks like taggle.js and Tagger.js to make a 'pool' of "to emails" but it didn't really work super well. Other ways to show a visual pool of emails would be great but I am burnt out of trying it. Anyone else want to take a shot?
+* The ability to add other header types, but even to add your own custom header? I don't want to provide useless features, but if it's requested we could add them
+* The ability to add an attachment for a phishing payload would be nice
+* Is there a way to make it so spoofed emails don't show this "via" the spoofed server in gmail or other clients? Would that be a particular header fix? A picture is attached in the gitup readme.
 
 # Changelog
 All notable changes to this project will be documented in this file.
@@ -45,14 +37,28 @@ All notable changes to this project will be documented in this file.
     The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
     and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.2] - 2018-02-22
+### Added
+1. "More Sending Options" dropdown that now includes the ability to send cc and bcc messages
+2. Github sticky with version zaqar number
+### Changed
+3. Made the from field, from email, to email, and subject line 'required' by the form so users do not miss one by mistake
+4. Included jQuery and BS local files, and then also Included the CDN links in comments if they want a smaller app.
+5. Added a max length to the subject of 50 car--studies show that anything more than that can be marked as spam
+6. Moved all images to the img folder
+7. Made a 'zaqar.css' stylesheet as some of the same styles appear on both pages. Removed all internal styles.
+### Fixes
+8. Updated the way that errors are thrown and displayed. Now messages will not send and an error is displayed if the mail function returns false, and the rich vs raw text error was updated to tell the user if they either had two values or two empty values
+
 ## [1.1] - 2018-02-19
 ### Added
--Made this Changelog
--Added a "terms of usage" to discourage illegal usage of the appear
--Experimented and realized that multiple senders can be entered at one using a comma seperator. This was confirmed and a line of "pro tip" text was added to let the user know
--Simple UI fixes throughout. Take a look at the Github changes for more information on those.  
+1. Made this Changelog
+2. Added a "terms of usage" to discourage illegal usage of the app
+3. Experimented and realized that multiple senders can be entered at one using a comma separator. This was confirmed and a line of "pro tip" text was added to let the user know.
+### Fixed
+4. Simple UI fixes throughout. Take a look at the Github changes for more information on those.  
 
-## 1.0 - 2018-02-19
+## [1.0] - 2018-02-19
 ### Added
--Original upload
--Github page built
+1. Original upload
+2.Github page built
