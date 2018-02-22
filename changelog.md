@@ -1,4 +1,4 @@
-#CHANGELOG
+# CHANGELOG
     Zaqar: The Email Spoofer v1.2
     Created by: Tobin Shields
     Other contributors: [None as of now - You could change that!]
@@ -16,7 +16,7 @@
                     (Background image)
                     https://www.toptal.com/designers/subtlepatterns/
 
-#Types of changes
+# Types of changes
     [Added] for new features.
     [Changed] for changes in existing functionality.
     [Deprecated] for soon-to-be removed features.
@@ -24,12 +24,13 @@
     [Fixed] for any bug fixes.
     [Security] in case of vulnerabilities.
 
-#[Unreleased] - Upcoming Changes, Current Projects, and 'wish list' items
+# [Unreleased] - Upcoming Changes, Current Projects, and 'wish list' items
 * We could totally use a cool logo for Zaqar. The app is sleek and simple, so something modern with a flat design would be cool. I am going to open that one up to the community for that one.
 * I have played around with JS frameworks like taggle.js and Tagger.js to make a 'pool' of "to emails" but it didn't really work super well. Other ways to show a visual pool of emails would be great but I am burnt out of trying it. Anyone else want to take a shot?
 * The ability to add other header types, but even to add your own custom header? I don't want to provide useless features, but if it's requested we could add them
 * The ability to add an attachment for a phishing payload would be nice
-* Is there a way to make it so spoofed emails don't show this "via" the spoofed server in gmail or other clients? Would that be a particular header fix? A picture is attached in the gitup readme.
+* Is there a way to make it so spoofed emails don't show this "via" the spoofed server in gmail or other clients? Would that be a particular header fix? See the picture below as an example:
+<img src="https://i.imgur.com/Q4JOS76.png">
 
 # Changelog
 All notable changes to this project will be documented in this file.
