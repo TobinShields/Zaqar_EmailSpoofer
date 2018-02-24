@@ -1,5 +1,6 @@
 # Zaqar: The Email Spoofer v1.3
 A powerful PHP email spoofer with a polished UI, rich text editor, and multiple sending options.
+<img src="https://github.com/TobinShields/Zaqar_Mailer/blob/master/img/screenshots.png?raw=true" width="100%">
 
 ## What's new in v1.3?
 ### Added
