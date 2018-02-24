@@ -7,7 +7,7 @@
      /____\__,_|\__, |\__,_|_|      |_____|_| |_| |_|\__,_|_|_|   |____/| .__/ \___/ \___/|_|  \___|_|
                    |_|                                                  |_|
 
-   Zaqar: The Email Spoofer v1.2
+   Zaqar: The Email Spoofer v1.3
    Created by: Tobin Shields
    Other contributors: [None as of now]
    Github: https://github.com/TobinShields/Zaqar_EmailSpoofer
@@ -19,6 +19,10 @@
                    Simditor
                    (Ritch Text Editor)
                    http://simditor.tower.im/
+
+                   PHPMailer
+                   (The classic email sending library for PHP)
+                   https://github.com/PHPMailer/PHPMailer
 
                    Subtle Patterns
                    (Background image)
@@ -58,7 +62,7 @@
 
     <!-- Github sticky -->
     <div class="github-sticky">
-        <p>Zaqar v1.2 - Support this project on <a href="https://github.com/TobinShields/Zaqar_EmailSpoofer">Github</a></p>
+        <p>Zaqar v1.3 - Support this project on <a href="https://github.com/TobinShields/Zaqar_EmailSpoofer">Github</a></p>
     </div>
 
     <!-- Main container. It is thinner so it's using a col-6 with an offset -->
@@ -68,7 +72,7 @@
         <!-- This is a generic icon, in future updates a custom icon would be awesome -->
         <img src="img/zaqar-icon.png" alt="Zaqar Icon" class="img-fluid mt-4 mb-4" id="email-icon">
         <!-- Start Form -->
-        <form class="form" role="form" autocomplete="off" action="mailer.php" method="post">
+        <form class="form" role="form" autocomplete="off" action="mailer.php" method="post" enctype="multipart/form-data">
            <fieldset>
            <!-- Open Card -->
            <div class="card card-outline-secondary">
@@ -172,10 +176,23 @@
                            </div>
                        </div> <!-- / message input -->
 
-                       <p class="mt-3 mb-0">
+                        <!-- FILE Attachments -->
+                        <div class="row mb-3 mt-3">
+                            <!-- <input type="file" name="attachment"> -->
+                            <div class="col-12">
+                                <strong>File Attachment</strong>
+                                <p>You have the option to send an attatchment with your email. Make sure that your webserver php.ini file allows for file uploads, and that the max upload size is set to at least the size of your attatchment. This may be the case by default, and an error will be presented if it does not work.</p>
+                                <div class="custom-file">
+                                  <input type="file" class="custom-file-input" id="customFile" name="attachment" onchange="fileNameChange()">
+                                  <label class="custom-file-label" for="customFile"><span style="font-weight: normal;  font-style: italic;" id="customFileText">Choose file</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                       <div class="mt-5">
                            <input type="checkbox" onchange="document.getElementById('submitBtn').disabled = !this.checked;"/>
                            By checking this box you agree to the <a href="#" data-toggle="modal" data-target="#termsOfUsage">basic terms of usage</a> for this application
-                       </p>
+                       </div>
 
                        <!-- Terms of Usage -->
                        <!-- Modal -->
@@ -216,7 +233,7 @@
                 <div class="checkbox">
 
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg mt-3" style="display: block; margin:auto; width:100%;" id="submitBtn" disabled>Send Spoofed Email</button>
+                <button type="submit" class="btn btn-primary btn-lg mt-3" style="display: block; margin:auto; width:100%;" id="submitBtn" name="submit" disabled>Send Spoofed Email</button>
             </div>
 
         </fieldset>
@@ -272,6 +289,14 @@
             showMoreOptions = false;
         }
     });
+
+    // File Upload change
+    function fileNameChange(){
+        var fileName = document.getElementById("customFile").files[0].name;
+        console.log("User uploaded " + fileName);
+        document.getElementById("customFileText").innerHTML = fileName;
+    };
+
     </script>
   </body>
 </html>

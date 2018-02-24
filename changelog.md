@@ -1,9 +1,9 @@
 # CHANGELOG
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-    Zaqar: The Email Spoofer v1.2
+    Zaqar: The Email Spoofer v1.3
     Created by: Tobin Shields
-    Other contributors: [None as of now - You could change that!]
+    Other contributors: [None as of now]
     Github: https://github.com/TobinShields/Zaqar_EmailSpoofer
     Resources Used:
                     Bootstrap 4
@@ -13,6 +13,10 @@ All notable changes to this project will be documented in this file. The format 
                     Simditor
                     (Ritch Text Editor)
                     http://simditor.tower.im/
+
+                    PHPMailer
+                    (The classic email sending library for PHP)
+                    https://github.com/PHPMailer/PHPMailer
 
                     Subtle Patterns
                     (Background image)
@@ -27,12 +31,15 @@ All notable changes to this project will be documented in this file. The format 
     [Security] in case of vulnerabilities.
 
 ## [Unreleased] - Upcoming Changes, Current Projects, and 'wish list' items
-* We could totally use a cool logo for Zaqar. The app is sleek and simple, so something modern with a flat design would be cool. I am going to open that one up to the community for that one.
-* I have played around with JS frameworks like taggle.js and Tagger.js to make a 'pool' of "to emails" but it didn't really work super well. Other ways to show a visual pool of emails would be great but I am burnt out of trying it. Anyone else want to take a shot?
-* The ability to add other header types, but even to add your own custom header? I don't want to provide useless features, but if it's requested we could add them
-* The ability to add an attachment for a phishing payload would be nice. I did some digging and I think we would need to move away from the simple mail() function and use the [PHPMailer script](https://github.com/PHPMailer/PHPMailer). This would mean some decent rewrites of the actual app, but could be worth it if this is an important feature.
-* Is there a way to make it so spoofed emails don't show this "via" the spoofed server in gmail or other clients? Would that be a particular header fix? See the picture below as an example:
-<img src="https://i.imgur.com/Q4JOS76.png">
+* Right now the logo for Zaqar is a generic email icon--however, it would be great to have a custom logo. Ideally in the same 'flat' style and using the same blue color to match the rest of the app. However, the colors can be updated to fit logo if needed.
+* I have played around with JS frameworks like taggle.js and Tagger.js to make a 'pool' of "to emails" but it didn't really work super well. Other ways to show a visual pool of emails would be great but I am burnt out of trying it. Anyone else want to take a shot? Not really needed, but could be a nice UI feature.
+* The ability to add other header types, but even to add your own custom header? I don't want to provide useless features, but if there is a good use for penetration testing then we should allow for it.
+
+## [1.3] - 2018-02-24
+### Added
+1. Users can now upload attachments! This feature has been tested and works using .png, .docx, and .pdf files. Has not been tested using possibly malicious payloads for a target to press--although, if it passes the email virus scan then it should be fine.
+### Changed
+2. Zaqar is now no longer using the default mail() function to send emails, but instead using the PHPMailer library. This appears to be the cleaner way to send messages overall, plus it was what allowed for attachments. Will continue to experiment with more features of this lib.   
 
 ## [1.2] - 2018-02-22
 ### Added
