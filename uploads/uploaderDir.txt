@@ -1,0 +1,1 @@
+This directory is where uploaded attatchments are stored. If any of the attachments contains sensitive or potentially malicious content, then it may be detected by your webservers security scans. Consider removing files once the message has been received by the target.
