@@ -74,7 +74,9 @@ try {
         $mail->addBCC($bcc);
     }
     //Attachments
-    $mail->addAttachment($path);         // Add attachments
+    if (!empty($fileTempName)) {        //checks to see if a file was attatched
+        $mail->addAttachment($path);    // Add attachments
+    }
     //Content
     $mail->isHTML(true);                // Set email format to HTML
     $mail->Subject = $subjectLine;
